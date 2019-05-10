@@ -1,0 +1,15 @@
+<div *ngIf="airPlane">
+  <h3>Detalhes</h3>
+  <a mat-button color="primary" [routerLink]="['/']">Voltar</a>
+  <dl>
+      <dt>Codigo</dt>
+      <dd>{{ airPlane.codigo }}</dd>
+      <dt>Modelo</dt>
+      <dd>{{ airPlane.modelo }}</dd>
+      <dt>Quantidade de passageiros</dt>
+      <dd>{{ airPlane.quantidadePassageiros }}</dd>
+      <dt>Data de registro</dt>
+      <dd>{{ airPlane.dataCriacao | date:'dd/MM/yyyy h:mm' }}</dd>
+    </dl>
+</div>
+

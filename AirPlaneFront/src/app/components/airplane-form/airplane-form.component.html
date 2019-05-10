@@ -1,0 +1,29 @@
+<div [formGroup]="airplaneGroup">
+  <h3>
+    {{ update ? 'Editar': 'Criar' }}
+  </h3>
+  <a mat-button color="primary" [routerLink]="['/']">Voltar</a>
+  <div class="row">
+    <mat-form-field>
+      <input matInput type="text" placeholder="Código" formControlName="codigo" [disabled]="update">
+    </mat-form-field>
+  </div>
+
+  <div class="row">
+    <mat-form-field>
+      <input matInput type="text" placeholder="Modelo" formControlName="modelo">
+    </mat-form-field>
+  </div>
+
+  <div class="row">
+    <mat-form-field>
+      <input matInput type="number" placeholder="Quantidade de Passageiros" formControlName="quantidadePassageiros">
+    </mat-form-field>
+  </div>
+
+  <div class="row">
+    <button mat-flat-button color="primary" (click)="submit()" [disabled]="!airplaneGroup.valid">
+        {{ update ? 'Editar': 'Criar' }}
+    </button>
+  </div>
+</div>

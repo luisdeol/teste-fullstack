@@ -1,0 +1,20 @@
+<button mat-flat-button color="primary" (click)="routeToForm()">Novo</button>
+<div class="row">
+  <mat-form-field class="busca-field">
+    <input matInput type="text" placeholder="Codigo" #busca>
+  </mat-form-field>
+  <button mat-flat-button color="primary" matLine (click)="search(busca)">Buscar</button>
+</div>
+<mat-list role="list">
+  <mat-card [routerLink]="['/airplanes', airplane.codigo]" class="card-airplane" *ngFor="let airplane of airplanes">
+      <img src="assets/images/airplane.svg" />
+    <a mat-list-item>
+        {{ airplane.codigo }} - {{ airplane.modelo }}
+    </a>
+    <mat-action-list>
+        <button matLine (click)="update(airplane,$event)" class="atualizar"> Atualizar </button>
+        <button matLine (click)="delete(airplane,$event)" class="remover"> Remover </button>
+    </mat-action-list>
+  </mat-card>
+</mat-list>
+<p *ngIf="airplanes && airplanes.length == 0">Não foram encontrados resultados para a busca realizada.</p>
