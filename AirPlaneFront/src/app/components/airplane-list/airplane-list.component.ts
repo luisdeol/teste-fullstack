@@ -62,11 +62,10 @@ export class AirplaneListComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
-        console.log(result);
         this.airplaneService.delete(airplane.codigo)
           .subscribe(result => {
             const index = this.airplanes.indexOf(airplane);
-            if (index > 0) {
+            if (index >= 0) {
               this.airplanes.splice(index, 1);
             }
           });
