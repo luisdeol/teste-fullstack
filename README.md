@@ -5,8 +5,10 @@ Aplicaçao full-stack CRUD de gerenciamento de avioes.
 Para execuçao:
 
 1. Primeiro, navegue para *AirPlaneFront* e execute:
-
-`ng serve`
+```
+npm install
+ng serve
+```
 
 2. Depois, navegue para *AirPlane.Back/AirPlane.Back.Api* e execute:
 
