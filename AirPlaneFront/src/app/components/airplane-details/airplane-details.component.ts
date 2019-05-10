@@ -24,7 +24,6 @@ export class AirplaneDetailsComponent implements OnInit {
           this.airplaneService.find(params['codigo'])
             .subscribe((airplane) => {
               this.airPlane = airplane;
-              console.log(this.airPlane);
             });
         }
       }
